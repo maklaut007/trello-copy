@@ -6,16 +6,15 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user')
 
 exports.user_get_users = (req, res, next)=>{
-	try{
-		User.find({})
+	User.find({})
 		.exec()
 		.then((a)=>res.json(a))
-	}
-	catch{
-		return res.status(500).json({
-			error: "Cant connect"
+		.catch(err => {
+			console.log(err);
+			res.status(500).json({
+				error: err
+			});
 		});
-	}
 }
 exports.user_signup = (req, res, next) => { 
 
