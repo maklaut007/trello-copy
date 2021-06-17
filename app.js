@@ -8,7 +8,7 @@ const borderRoutes = require('./api/routes/boards');
 const cardListRoutes = require('./api/routes/b');
 const userRoutes = require('./api/routes/user');
 
-mongoose.connect('mongodb+srv://maklaut:'+process.env.MONGO_ATLAS_PW+'@trello-aktlt.mongodb.net/test?retryWrites=true&w=majority', 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://maklaut:MZ7145824_@trello-aktlt.mongodb.net/test?retryWrites=true&w=majority', 
   {
     useNewUrlParser: true
   }
